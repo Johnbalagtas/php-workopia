@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteEngine %{REQUEST_FILENAME} !-f 
+RewriteEngine %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php [NC,L,QSA]

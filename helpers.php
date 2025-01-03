@@ -57,19 +57,47 @@ function loadPartial($name)
  * @return void 
  */
 
- function inspectAndDie($value) {
+function inspectAndDie($value)
+{
     echo '<pre>';
     var_dump($value);
     echo '</pre>';
     die();
- }
+}
 
- /**
-  * Format salary 
-  * @param string $salary
-  * @return string Formatted Salary
-  */
+/**
+ * Format salary 
+ * @param string $salary
+ * @return string Formatted Salary
+ */
 
-  function formatSalary($salary) {
+function formatSalary($salary)
+{
     return '$' . number_format(floatval($salary));
-  }
+}
+
+/**
+ * Sanitize Data
+ * 
+ * @param string $dirty
+ * 
+ * @return string
+ */
+
+function sanitize($dirty)
+{
+    return filter_var(trim($dirty), FILTER_SANITIZE_SPECIAL_CHARS);
+}
+
+/**
+ * Redirects to a given url
+ * 
+ * @param string $url
+ * @return void
+ */
+
+ function redirect($url) 
+ {
+    return header("Location: {$url}");
+    exit;
+ }
